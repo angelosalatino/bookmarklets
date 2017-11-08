@@ -1,1 +1,47 @@
-<!-- File html to install al bookmarklets -->
+<html><head>
+  <title>Find it at OU</title>
+  <style>
+      .markdown-body {
+          box-sizing: border-box;
+          min-width: 200px;
+          max-width: 980px;
+          margin: 0 auto;
+          padding: 45px;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .markdown-body h1 {
+          padding-bottom: 0.3em;
+          font-size: 2em;
+          border-bottom: 1px solid #eaecef;
+      }
+    </style>
+<link rel="stylesheet" href="github-markdown.css">
+<link rel="stylesheet" href="github-highlight.css">
+<script src="/socket.io/socket.io.js"></script>
+<script>
+      var socket = io();
+      socket.on('markdown', function (msg) {
+        document.getElementById("markdown").innerHTML = msg;
+        var cursor = document.getElementById("instant-markdown-cursor");
+        if (cursor) {
+          cursor.scrollIntoView();
+        }
+      });
+      socket.on('disconnect', function() {
+        window.close();
+      })
+    </script>
+</head>
+
+<body>
+  <article id="markdown" class="markdown-body">
+    <h1 id="bookmarklets">Bookmarklets</h1>
+<p>Dumb but timesaver applications that run into the browser</p>
+
+<h1 id="how-to-install">How to install</h1>
+<p>Drag these links <a style="font-weight: bold;" href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://rawgit.com/angelosalatino/bookmarklets/master/google-dictionary.js';})();">Dictionary</a></p>
+
+</article>
+
+
+</body></html>
