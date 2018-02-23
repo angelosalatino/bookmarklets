@@ -39,8 +39,22 @@
 <p>Dumb but timesaver applications that run into the browser</p>
 
 <h1 id="how-to-install">How to install</h1>
-<p>Drag these links <a style="font-weight: bold;" href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://rawgit.com/angelosalatino/bookmarklets/master/google-dictionary.js';})();">Dictionary</a></p>
-
+<p>Drag these links:
+  <ul>
+  <li><a style="font-weight: bold;" href="javascript:(function(){document.body.appendChild(document.createElement('script')).src='https://rawgit.com/angelosalatino/bookmarklets/master/google-dictionary.js';})();">Dictionary</a></p></li>
+  <li><a style="font-weight: bold;"  href="javascript:(function(){
+                           var text = 'oh hello';
+                           var input = document.createElement('INPUT');
+                           input.setAttribute('type', 'text');
+                           input.setAttribute('value', text);
+                           input.setAttribute('id', 'cp2cb');
+                           document.body.appendChild(input);
+                           var copyText = document.querySelector('#cp2cb');
+                           copyText.select();
+                           document.execCommand('copy');
+                           document.getElementById('cp2cb').remove();
+                           })();">Fill the Clipboard</a></p></li>
+  </ul>
 </article>
 
 
